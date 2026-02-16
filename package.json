@@ -1,14 +1,25 @@
 {
-  "name": "@c-frame/three-to-ammo",
+  "name": "@hubs/three-to-ammo",
   "version": "1.0.5",
   "description": "Convert THREE.Mesh to Ammo.btCollisionShape",
-  "homepage": "https://github.com/infinitelee/three-to-ammo",
-  "main": "index.js",
-  "module": "main.js",
+  "homepage": "https://github.com/MeirArani/three-to-ammo",
   "author": "Kevin Lee <kevin@infinite-lee.com>",
   "license": "MPL-2.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/three-to-ammo.umd.js",
+  "module": "./dist/three-to-ammo.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/three-to-ammo.mjs",
+      "require": "./dist/three-to-ammo.umd.js"
+    }
+  },
+
   "bugs": {
-    "url": "https://github.com/infinitelee/three-to-ammo/issues"
+    "url": "https://github.com/MeirArani/three-to-ammo/issues"
   },
   "repository": "infinitelee/three-to-ammo",
   "keywords": [
@@ -19,8 +30,8 @@
     "three.js"
   ],
   "scripts": {
-    "test": "webpack-dev-server --mode=development",
-    "test-legacy": "export NODE_OPTIONS=--openssl-legacy-provider && npm run test"
+    "dev": "vite",
+    "build": "vite build"
   },
   "peerDependencies": {
     "ammo.js": "*",
@@ -34,6 +45,7 @@
     "file-loader": "^5.0.2",
     "prettier": "^1.19.1",
     "three": "^0.128.0",
+    "vite": "^7.3.1",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
