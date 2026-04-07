@@ -1,7 +1,8 @@
+/// <reference types="vitest/config" />
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { playwright } from "@vitest/browser-playwright";
 import { defineConfig } from "vite";
-
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig(({ mode }) => {
@@ -27,6 +28,15 @@ export default defineConfig(({ mode }) => {
         output: {
           entryFileNames: "assets/js/[name]-[hash].js"
         }
+      }
+    },
+    test: {
+      globals: true,
+      browser: {
+        enabled: true,
+        provider: playwright(),
+        // https://vitest.dev/config/browser/playwright
+        instances: [{ browser: "chromium" }]
       }
     }
   };
