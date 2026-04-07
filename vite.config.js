@@ -11,13 +11,16 @@ export default defineConfig(({ mode }) => {
       lib: {
         entry: resolve(__dirname, "index.js"),
         name: "threeToAmmo",
-        fileName: "three-to-ammo"
+        fileName: "three-to-ammo",
+        formats: ["es"]
       },
-      rollupOptions: {
-        external: ["three"],
+      rolldownOptions: {
+        external: ["three", "@hubs/ammo.js"],
         output: {
+          format: "esm",
           globals: {
-            three: "three"
+            three: "three",
+            ammo: "@hubs/ammo.js"
           }
         }
       }
@@ -31,7 +34,6 @@ export default defineConfig(({ mode }) => {
       }
     },
     test: {
-      globals: true,
       browser: {
         enabled: true,
         provider: playwright(),

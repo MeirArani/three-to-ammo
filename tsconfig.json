@@ -26,9 +26,8 @@
     "composite": true,
     "sourceMap": true,
     "declarationMap": true,
-    "types": ["vitest/globals"],
 
-    "typeRoots": ["./types", "./node_modules/@types", "./node_modules", "../../node_modules/@types", "../../node_modules"],  
+    "typeRoots": ["./types", "./node_modules/@types", "../../node_modules/@types"],  
   },
   "exclude": ["node_modules"],
   "include": ["index.ts", "./types/ammo.d.ts", "./test/*"]
