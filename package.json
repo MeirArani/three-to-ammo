@@ -9,10 +9,11 @@
   "files": [
     "dist"
   ],
-  "module": "./dist/three-to-ammo.js",
+  "module": "./dist/index.mjs",
   "exports": {
     ".": {
-      "import": "./dist/three-to-ammo.js"
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.mts"
     }
   },
   "bugs": {
@@ -36,6 +37,7 @@
     "three": "*"
   },
   "devDependencies": {
+    "@hubs/ammo.js": "workspace:^",
     "@vitejs/plugin-react": "^6.0.1",
     "@vitest/browser-playwright": "^4.1.2",
     "eslint": "^6.7.2",
@@ -43,8 +45,11 @@
     "eslint-plugin-prettier": "^3.1.1",
     "file-loader": "^5.0.2",
     "playwright": "^1.59.1",
-    "prettier": "^1.19.1",
+    "prettier": "^3.8.1",
+    "rolldown-plugin-dts": "^0.23.2",
     "three": "^0.128.0",
+    "tsdown": "^0.21.7",
+    "typescript": "^6.0.2",
     "vite": "^8.0.0",
     "vitest": "^4.1.2",
     "vitest-browser-react": "^2.2.0",

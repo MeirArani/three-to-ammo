@@ -27,8 +27,7 @@
     "sourceMap": true,
     "declarationMap": true,
 
-    "typeRoots": ["./types", "./node_modules/@types", "../../node_modules/@types"],  
+    "typeRoots": ["./types", "./node_modules/@types", "../../node_modules/@types"]
   },
-  "exclude": ["node_modules"],
   "include": ["index.ts", "./types/ammo.d.ts", "./test/*"]
 }

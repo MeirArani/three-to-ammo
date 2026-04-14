@@ -4,10 +4,12 @@ import { fileURLToPath } from "node:url";
 import { playwright } from "@vitest/browser-playwright";
 import { defineConfig } from "vite";
 const __dirname = dirname(fileURLToPath(import.meta.url));
+import { dts } from "rolldown-plugin-dts";
 
 export default defineConfig(({ mode }) => {
   return {
     build: {
+      sourcemap: true,
       lib: {
         entry: resolve(__dirname, "index.js"),
         name: "threeToAmmo",
@@ -16,6 +18,11 @@ export default defineConfig(({ mode }) => {
       },
       rolldownOptions: {
         external: ["three", "@hubs/ammo.js"],
+        plugins: [
+          dts({
+            entry: ["./index.ts"]
+          })
+        ],
         output: {
           format: "esm",
           globals: {

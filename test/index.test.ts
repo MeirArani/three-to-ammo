@@ -8,7 +8,7 @@ import {
   createHullShape,
   createTriMeshShape,
   createHeightfieldTerrainShape,
-  createHACDShapes
+  createHACDShapes,
 } from "../index";
 import { describe, it, suite, test, assert, beforeAll } from "vitest";
 import { BoxGeometry, Matrix4, Mesh, Vector3 } from "three";
@@ -20,7 +20,7 @@ suite("Shape Tests", () => {
       const shape = createBoxShape({
         fit: "manual",
         matrixWorld: matrixWorld.elements,
-        halfExtents: new Vector3(1, 1, 1)
+        halfExtents: new Vector3(1, 1, 1),
       });
       assert.notEqual(shape, null);
       shape.destroy();
@@ -29,7 +29,7 @@ suite("Shape Tests", () => {
       const shape = createCylinderShape({
         fit: "manual",
         matrixWorld: matrixWorld.elements,
-        halfExtents: new Vector3(1, 1, 1)
+        halfExtents: new Vector3(1, 1, 1),
       });
       assert.notEqual(shape, null);
       shape.destroy();
@@ -38,7 +38,7 @@ suite("Shape Tests", () => {
       const shape = createCapsuleShape({
         fit: "manual",
         matrixWorld: matrixWorld.elements,
-        halfExtents: new Vector3(1, 1, 1)
+        halfExtents: new Vector3(1, 1, 1),
       });
       assert.notEqual(shape, null);
       shape.destroy();
@@ -47,7 +47,7 @@ suite("Shape Tests", () => {
       const shape = createConeShape({
         fit: "manual",
         matrixWorld: matrixWorld.elements,
-        halfExtents: new Vector3(1, 1, 1)
+        halfExtents: new Vector3(1, 1, 1),
       });
       assert.notEqual(shape, null);
       shape.destroy();
@@ -55,7 +55,7 @@ suite("Shape Tests", () => {
     it("should createSphereShape()", () => {
       const shape = createSphereShape({
         fit: "manual",
-        matrixWorld: matrixWorld.elements
+        matrixWorld: matrixWorld.elements,
       });
       assert.notEqual(shape, null);
       shape.destroy();
@@ -75,7 +75,7 @@ suite("Shape Tests", () => {
           vertices.push(vertexArray);
           matrices.push(matrixArray);
           indexes.push(indexArray);
-        }
+        },
       });
     });
     it("should createBoxShape()", () => {
@@ -83,7 +83,7 @@ suite("Shape Tests", () => {
         fit: "all",
         vertices: vertices,
         matrices: matrices,
-        matrixWorld: matrixWorld.elements
+        matrixWorld: matrixWorld.elements,
       });
       assert.notEqual(shape, null);
       shape.destroy();
@@ -93,7 +93,7 @@ suite("Shape Tests", () => {
         fit: "all",
         vertices: vertices,
         matrices: matrices,
-        matrixWorld: matrixWorld.elements
+        matrixWorld: matrixWorld.elements,
       });
       assert.notEqual(shape, null);
       shape.destroy();
@@ -103,7 +103,7 @@ suite("Shape Tests", () => {
         fit: "all",
         vertices: vertices,
         matrices: matrices,
-        matrixWorld: matrixWorld.elements
+        matrixWorld: matrixWorld.elements,
       });
       assert.notEqual(shape, null);
       shape.destroy();
@@ -113,7 +113,7 @@ suite("Shape Tests", () => {
         fit: "all",
         vertices: vertices,
         matrices: matrices,
-        matrixWorld: matrixWorld.elements
+        matrixWorld: matrixWorld.elements,
       });
       assert.notEqual(shape, null);
       shape.destroy();
@@ -123,7 +123,7 @@ suite("Shape Tests", () => {
         fit: "all",
         vertices: vertices,
         matrices: matrices,
-        matrixWorld: matrixWorld.elements
+        matrixWorld: matrixWorld.elements,
       });
       assert.notEqual(shape, null);
       shape.destroy();
@@ -132,7 +132,7 @@ suite("Shape Tests", () => {
       const shape = createHullShape({
         vertices: vertices,
         matrices: matrices,
-        matrixWorld: matrixWorld.elements
+        matrixWorld: matrixWorld.elements,
       });
       assert.notEqual(shape, null);
       shape.destroy();
@@ -142,10 +142,10 @@ suite("Shape Tests", () => {
         vertices: vertices,
         matrices: matrices,
         indexes: indexes,
-        matrixWorld: matrixWorld.elements
+        matrixWorld: matrixWorld.elements,
       });
       assert.notEqual(shapes.length, 0);
-      shapes.forEach(shape => {
+      shapes.forEach((shape) => {
         shape.destroy();
       });
     });
@@ -154,10 +154,10 @@ suite("Shape Tests", () => {
         vertices: vertices,
         matrices: matrices,
         indexes: indexes,
-        matrixWorld: matrixWorld.elements
+        matrixWorld: matrixWorld.elements,
       });
       assert.notEqual(shapes.length, 0);
-      shapes.forEach(shape => {
+      shapes.forEach((shape) => {
         shape.destroy();
       });
     });
@@ -166,7 +166,7 @@ suite("Shape Tests", () => {
         vertices: vertices,
         matrices: matrices,
         indexes: indexes,
-        matrixWorld: matrixWorld.elements
+        matrixWorld: matrixWorld.elements,
       });
       assert.notEqual(shape, null);
       shape.destroy();
@@ -177,8 +177,8 @@ suite("Shape Tests", () => {
           [0, 0, 0, 0],
           [0, 1, 1, 0],
           [0, 1, 1, 0],
-          [0, 0, 0, 0]
-        ]
+          [0, 0, 0, 0],
+        ],
       });
       assert.notEqual(shape, null);
       shape.destroy();

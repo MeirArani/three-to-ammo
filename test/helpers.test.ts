@@ -15,7 +15,7 @@ describe("Helper Methods", () => {
         vertices.push(vertexArray);
         matrices.push(matrixArray);
         if (indexArray) indexes.push(indexArray);
-      }
+      },
     });
     assert.equal(vertices.length, 1);
     assert.equal(matrices.length, 1);
